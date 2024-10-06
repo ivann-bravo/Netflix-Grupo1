@@ -60,7 +60,7 @@ function MovieList() {
   };
 
   const busqueda = [
-    { name: "Tendencias", movies: moviesConFiltro }
+    { name: "Resultado", movies: moviesConFiltro }
   ]
 
   const categories = [

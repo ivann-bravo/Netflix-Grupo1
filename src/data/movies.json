@@ -10,7 +10,8 @@
     "idiomas": ["Inglés", "Italiano", "Latín"],
     "duracion": "175 min",
     "año": 1972,
-    "edadMinima": 18
+    "edadMinima": 18,
+    "trailer": "https://www.youtube.com/watch?v=sY1S34973zA"
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "idiomas": ["Inglés", "Español", "Francés"],
     "duracion": "154 min",
     "año": 1994,
-    "edadMinima": 18
+    "edadMinima": 18,
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "idiomas": ["Inglés", "Sindarin", "Quenya"],
     "duracion": "178 min",
     "año": 2001,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "idiomas": ["Inglés", "Japonés", "Francés"],
     "duracion": "148 min",
     "año": 2010,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0"
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "idiomas": ["Inglés"],
     "duracion": "128 min",
     "año": 2016,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=0pdqf4P9MB8"
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "idiomas": ["Inglés", "Francés", "Alemán"],
     "duracion": "99 min",
     "año": 2014,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=1Fg5iWmQjwk"
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "idiomas": ["Coreano", "Inglés"],
     "duracion": "132 min",
     "año": 2019,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=5xH0HfJHsaY"
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "idiomas": ["Inglés"],
     "duracion": "146 min",
     "año": 1980,
-    "edadMinima": 18
+    "edadMinima": 18,
+    "trailer": "https://www.youtube.com/watch?v=5Cb3ik6zP2I"
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "idiomas": ["Inglés", "Español"],
     "duracion": "105 min",
     "año": 2017,
-    "edadMinima": 7
+    "edadMinima": 7,
+    "trailer": "https://www.youtube.com/watch?v=xlnPHQ3TLX8"
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "idiomas": ["Inglés"],
     "duracion": "169 min",
     "año": 2014,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "idiomas": ["Inglés"],
     "duracion": "118 min",
     "año": 1991,
-    "edadMinima": 18
+    "edadMinima": 18,
+    "trailer": "https://www.youtube.com/watch?v=W6Mm8Sbe__o"
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@
     "idiomas": ["Inglés"],
     "duracion": "142 min",
     "año": 1994,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=bLvqoHBptjg"
   },
   {
     "id": 13,
@@ -166,7 +178,8 @@
     "idiomas": ["Inglés"],
     "duracion": "152 min",
     "año": 2008,
-    "edadMinima": 13
+    "edadMinima": 13,
+    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
   },
   {
     "id": 14,
@@ -179,7 +192,8 @@
     "idiomas": ["Inglés"],
     "duracion": "155 min",
     "año": 2000,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=owK1qxDselE"
   },
   {
     "id": 15,
@@ -192,7 +206,8 @@
     "idiomas": ["Inglés"],
     "duracion": "136 min",
     "año": 1999,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
   },
   {
     "id": 16,
@@ -205,7 +220,8 @@
     "idiomas": ["Inglés"],
     "duracion": "139 min",
     "año": 1999,
-    "edadMinima": 18
+    "edadMinima": 18,
+    "trailer": "https://www.youtube.com/watch?v=SUXWAEX2jlg"
   },
   {
     "id": 17,
@@ -218,7 +234,8 @@
     "idiomas": ["Inglés"],
     "duracion": "120 min",
     "año": 2010,
-    "edadMinima": 12
+    "edadMinima": 12,
+    "trailer": "https://www.youtube.com/watch?v=lB95KLmpLR4"
   },
   {
     "id": 18,
@@ -231,7 +248,8 @@
     "idiomas": ["Inglés"],
     "duracion": "106 min",
     "año": 2014,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=7d_jQycdQGo"
   },
   {
     "id": 19,
@@ -244,7 +262,8 @@
     "idiomas": ["Inglés"],
     "duracion": "130 min",
     "año": 2006,
-    "edadMinima": 13
+    "edadMinima": 13,
+    "trailer": "https://www.youtube.com/watch?v=o4gHCmTQDVI"
   },
   {
     "id": 20,
@@ -257,6 +276,7 @@
     "idiomas": ["Inglés"],
     "duracion": "138 min",
     "año": 2010,
-    "edadMinima": 16
+    "edadMinima": 16,
+    "trailer": "https://www.youtube.com/watch?v=5iaYLCiq5RM"
   }
 ]
