@@ -14,7 +14,48 @@ body {
   padding: 1rem;
   position: relative;
   z-index: 1000;
-  text-align: center
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  color: white; /* Texto blanco */
+}
+
+.App-header h1 {
+  font-size: 2.5rem; /* Tamaño del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-family: 'Netflix Sans', sans-serif; /* Fuente de estilo Netflix (ajusta según tu preferencia) */
+}
+
+.form {
+  display: flex; /* Usar flex para alinear el input y el botón */
+  justify-content: center; /* Centra el contenido del formulario */
+}
+
+.form input {
+  padding: 10px; /* Espacio interno */
+  border: none; /* Sin borde */
+  border-radius: 5px 0 0 5px; /* Bordes redondeados a la izquierda */
+  outline: none; /* Sin contorno al seleccionar */
+  font-size: 1rem; /* Tamaño de fuente */
+  width: 300px; /* Ajusta el valor según tus necesidades */
+}
+
+.form button {
+  padding: 10px 20px; /* Espacio interno del botón */
+  border: none; /* Sin borde */
+  border-radius: 0 5px 5px 0; /* Bordes redondeados a la derecha */
+  background-color: #e50914; /* Color rojo de Netflix */
+  color: white; /* Texto blanco */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.form button:hover {
+  background-color: #f40612; /* Color más oscuro en hover */
 }
 
 h1 {
