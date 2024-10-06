@@ -84,7 +84,7 @@ function MovieList() {
       </header>
 
       {
-        moviesConFiltro !== '' ? (
+        moviesConFiltro.length ? (
           busqueda.map((category, index) => (
             <div key={index}>
               <h2 style={{ marginLeft: '4rem', color: '#e5e5e5' }}>Resultados</h2>
