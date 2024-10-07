@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 
-function MovieDetails({ movie, onClose }) {
+function MovieDetails({ movie, onClose , onAddToWatched }) {
   const [showTrailer, setShowTrailer] = useState(false);
 
   if (!movie) return null;
 
   const toggleTrailer = () => {
     setShowTrailer(!showTrailer);
+    
+    // Aquí llamamos a la función para agregar la película a vistas cuando el trailer se muestra
+    if (!showTrailer) {
+      onAddToWatched(movie); // Llama a la función que agrega la película a vistas
+    }
   };
 
   const getYouTubeEmbedUrl = (url) => {
@@ -32,7 +37,7 @@ function MovieDetails({ movie, onClose }) {
 
             <div className="movie-details-info">
               <h2>{movie.titulo}</h2>
-              <p>{movie.año} | {movie.duracion} | {movie.edadMinima}+</p>
+              <p>{movie.año} | {movie.genero} | {movie.duracion} | {movie.edadMinima}+</p>
               <p>{movie.descripcionLarga}</p>
               <br />
               <p><strong>Director:</strong> {movie.director}</p>

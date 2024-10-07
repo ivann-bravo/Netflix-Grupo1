@@ -11,7 +11,8 @@
     "duracion": "175 min",
     "año": 1972,
     "edadMinima": 18,
-    "trailer": "https://www.youtube.com/watch?v=sY1S34973zA"
+    "trailer": "https://www.youtube.com/watch?v=sY1S34973zA",
+    "genero": "Crimen, Drama"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     "duracion": "154 min",
     "año": 1994,
     "edadMinima": 18,
-    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "genero": "Crimen, Drama"
   },
   {
     "id": 3,
@@ -39,7 +41,8 @@
     "duracion": "178 min",
     "año": 2001,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4"
+    "trailer": "https://www.youtube.com/watch?v=V75dMMIW2B4",
+    "genero": "Aventura, Fantasía"
   },
   {
     "id": 4,
@@ -53,7 +56,8 @@
     "duracion": "148 min",
     "año": 2010,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "genero": "Ciencia Ficción, Acción"
   },
   {
     "id": 5,
@@ -67,7 +71,8 @@
     "duracion": "128 min",
     "año": 2016,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=0pdqf4P9MB8"
+    "trailer": "https://www.youtube.com/watch?v=0pdqf4P9MB8",
+    "genero": "Romance, Musical"
   },
   {
     "id": 6,
@@ -81,7 +86,8 @@
     "duracion": "99 min",
     "año": 2014,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=1Fg5iWmQjwk"
+    "trailer": "https://www.youtube.com/watch?v=1Fg5iWmQjwk",
+    "genero": "Comedia, Drama"
   },
   {
     "id": 7,
@@ -95,7 +101,8 @@
     "duracion": "132 min",
     "año": 2019,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=5xH0HfJHsaY"
+    "trailer": "https://www.youtube.com/watch?v=5xH0HfJHsaY",
+    "genero": "Drama, Thriller"
   },
   {
     "id": 8,
@@ -109,7 +116,8 @@
     "duracion": "146 min",
     "año": 1980,
     "edadMinima": 18,
-    "trailer": "https://www.youtube.com/watch?v=5Cb3ik6zP2I"
+    "trailer": "https://www.youtube.com/watch?v=5Cb3ik6zP2I",
+    "genero": "Drama, Romance"
   },
   {
     "id": 9,
@@ -123,7 +131,8 @@
     "duracion": "105 min",
     "año": 2017,
     "edadMinima": 7,
-    "trailer": "https://www.youtube.com/watch?v=xlnPHQ3TLX8"
+    "trailer": "https://www.youtube.com/watch?v=xlnPHQ3TLX8",
+    "genero": "Animación, Aventura"
   },
   {
     "id": 10,
@@ -137,7 +146,8 @@
     "duracion": "169 min",
     "año": 2014,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    "genero": "Ciencia Ficción, Aventura"
   },
   {
     "id": 11,
@@ -151,7 +161,8 @@
     "duracion": "118 min",
     "año": 1991,
     "edadMinima": 18,
-    "trailer": "https://www.youtube.com/watch?v=W6Mm8Sbe__o"
+    "trailer": "https://www.youtube.com/watch?v=W6Mm8Sbe__o",
+    "genero": "Ciencia Ficción, Aventura"
   },
   {
     "id": 12,
@@ -165,7 +176,8 @@
     "duracion": "142 min",
     "año": 1994,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=bLvqoHBptjg"
+    "trailer": "https://www.youtube.com/watch?v=bLvqoHBptjg",
+    "genero": "Drama, Romance"
   },
   {
     "id": 13,
@@ -179,7 +191,8 @@
     "duracion": "152 min",
     "año": 2008,
     "edadMinima": 13,
-    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "genero": "Aventura, Ciencia Ficción"
   },
   {
     "id": 14,
@@ -193,7 +206,8 @@
     "duracion": "155 min",
     "año": 2000,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=owK1qxDselE"
+    "trailer": "https://www.youtube.com/watch?v=owK1qxDselE",
+    "genero": "Acción, Drama"
   },
   {
     "id": 15,
@@ -207,7 +221,9 @@
     "duracion": "136 min",
     "año": 1999,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
+    "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+    "genero": "Ciencia Ficción, Acción"
+
   },
   {
     "id": 16,
@@ -221,7 +237,8 @@
     "duracion": "139 min",
     "año": 1999,
     "edadMinima": 18,
-    "trailer": "https://www.youtube.com/watch?v=SUXWAEX2jlg"
+    "trailer": "https://www.youtube.com/watch?v=SUXWAEX2jlg",
+    "genero": "Drama, Thriller"
   },
   {
     "id": 17,
@@ -235,7 +252,8 @@
     "duracion": "120 min",
     "año": 2010,
     "edadMinima": 12,
-    "trailer": "https://www.youtube.com/watch?v=lB95KLmpLR4"
+    "trailer": "https://www.youtube.com/watch?v=lB95KLmpLR4",
+    "genero": "Biografía, Drama"
   },
   {
     "id": 18,
@@ -249,7 +267,8 @@
     "duracion": "106 min",
     "año": 2014,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=7d_jQycdQGo"
+    "trailer": "https://www.youtube.com/watch?v=7d_jQycdQGo",
+    "genero": "Aventura, Ciencia Ficción"
   },
   {
     "id": 19,
@@ -263,7 +282,8 @@
     "duracion": "130 min",
     "año": 2006,
     "edadMinima": 13,
-    "trailer": "https://www.youtube.com/watch?v=o4gHCmTQDVI"
+    "trailer": "https://www.youtube.com/watch?v=o4gHCmTQDVI",
+    "genero": "Suspenso, Drama"
   },
   {
     "id": 20,
@@ -277,6 +297,7 @@
     "duracion": "138 min",
     "año": 2010,
     "edadMinima": 16,
-    "trailer": "https://www.youtube.com/watch?v=5iaYLCiq5RM"
+    "trailer": "https://www.youtube.com/watch?v=5iaYLCiq5RM",
+    "genero": "Suspenso, Drama"
   }
 ]
