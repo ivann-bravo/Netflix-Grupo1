@@ -28,37 +28,37 @@ function MovieList() {
     setSelectedMovie(movie);
   };
 
-  const apeliculaVerLuego = (movie) =>{
-    if(!peliculasVistas.some(pelicula=> pelicula.id === movie.id)){
+  const apeliculaVerLuego = (movie) => {
+    if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
       setPeliculasVistas([...peliculasVistas, movie]);
     }
   }
 
-  const agregarAMiLista = (movie) =>{
-    if(!miLista.some(pelicula=> pelicula.id === movie.id)){
+  const agregarAMiLista = (movie) => {
+    if (!miLista.some(pelicula => pelicula.id === movie.id)) {
       setMiLista([...miLista, movie]);
     }
   }
-  const eliminarDeMiLista = (movie) =>{
-    if(miLista.some(pelicula=> pelicula.id === movie.id)){
-       
+  const eliminarDeMiLista = (movie) => {
+    if (miLista.some(pelicula => pelicula.id === movie.id)) {
+
       setMiLista(miLista.filter(item => item.id !== movie.id));
     }
   }
-  
+
   const handleCloseDetails = () => {
     setSelectedMovie(null);
   };
 
   const buscarPelicula = ({ tituloBuscado }) => {
     return movies.filter(movie =>
-      movie.titulo.toLowerCase().includes(tituloBuscado.toLowerCase()) );
+      movie.titulo.toLowerCase().includes(tituloBuscado.toLowerCase()));
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(tituloBuscado !== '')
-    setMoviesConFiltro(buscarPelicula({ tituloBuscado }))
+    if (tituloBuscado !== '')
+      setMoviesConFiltro(buscarPelicula({ tituloBuscado }))
   }
 
   const handleChange = (event) => {
@@ -124,27 +124,31 @@ function MovieList() {
             </div>
           ))
         ) : (
-          categories.map((category, index) => (
-            <div key={index}>
-              <h2 style={{ marginLeft: '4rem', color: '#e5e5e5' }}>{category.name}</h2>
-
-              <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-                <button onClick={() => scrollLeft(index + 1)} className="scroll-button">◀</button>
-
-                <section className="movie-list" ref={el => scrollRefs.current[index + 1] = el}>
-                  {category.movies.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} onClick={handleMovieClick} />
-                  ))}
-                </section>
-
-                <button onClick={() => scrollRight(index + 1)} className="scroll-button">▶</button>
-              </div>
-            </div>
-          ))
+          categories.map((category, index) => {
+            return (
+              category.movies.length ? (
+                <div key={index}>
+                  <h2 style={{ marginLeft: '4rem', color: '#e5e5e5' }}>{category.name}</h2>
+          
+                  <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+                    <button onClick={() => scrollLeft(index + 1)} className="scroll-button">◀</button>
+          
+                    <section className="movie-list" ref={el => scrollRefs.current[index + 1] = el}>
+                      {category.movies.map((movie) => (
+                        <MovieCard key={movie.id} movie={movie} onClick={handleMovieClick} />
+                      ))}
+                    </section>
+          
+                    <button onClick={() => scrollRight(index + 1)} className="scroll-button">▶</button>
+                  </div>
+                </div>
+              ) : null
+            );
+          })
         )
       }
 
-      <MovieDetails movie={selectedMovie} onClose={handleCloseDetails} onAddToWatched={apeliculaVerLuego} addToList= {agregarAMiLista} eliminar={eliminarDeMiLista}/>
+      <MovieDetails movie={selectedMovie} onClose={handleCloseDetails} onAddToWatched={apeliculaVerLuego} addToList={agregarAMiLista} eliminar={eliminarDeMiLista} />
     </div>
   );
 }

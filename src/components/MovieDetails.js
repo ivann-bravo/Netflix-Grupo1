@@ -18,13 +18,11 @@ function MovieDetails({ movie, onClose, onAddToWatched , addToList, eliminar}) {
   const toggleMylist= ()=> {
     setShowMyList(!showMyList);
 
-    
-
-    if(showMyList){
+    if(!showMyList){
       addToList(movie)
         
     }
-    if(!showMyList){
+    if(showMyList){
       eliminar(movie)
     }
 
@@ -52,7 +50,7 @@ function MovieDetails({ movie, onClose, onAddToWatched , addToList, eliminar}) {
               <img src={movie.portada} alt={movie.titulo} />
 
               <button className="add-to-list-button" onClick={toggleMylist}>
-                <span className="icon">+</span> {showMyList ?'Agregar a mi lista' : 'Sacar de mi lista' }
+                <span className="icon">{!showMyList ?'+' : '-' }</span> {!showMyList ?'Agregar a mi lista' : 'Eliminar de mi lista' }
               </button>
             </div>
 
