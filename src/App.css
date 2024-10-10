@@ -18,9 +18,9 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .App-header h1 {
@@ -29,32 +29,32 @@ body {
 }
 
 .form {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
 }
 
 .form input {
-  padding: 10px; 
-  border: none; 
+  padding: 10px;
+  border: none;
   border-radius: 5px 0 0 5px;
-  outline: none; 
-  font-size: 1rem; 
-  width: 300px; 
+  outline: none;
+  font-size: 1rem;
+  width: 300px;
 }
 
 .form button {
-  padding: 10px 20px; 
-  border: none; 
-  border-radius: 0 5px 5px 0; 
-  background-color: #e50914; 
-  color: white; 
-  font-size: 1rem; 
-  cursor: pointer; 
-  transition: background-color 0.3s; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #e50914;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .form button:hover {
-  background-color: #f40612; 
+  background-color: #f40612;
 }
 
 h1 {
@@ -68,12 +68,15 @@ h1 {
   overflow-x: auto;
   padding: 2rem 1rem 4rem 1rem;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE y Edge */
 }
 
 .movie-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
+  /* Chrome, Safari */
 }
 
 .categorie-slider h2 {
@@ -171,8 +174,8 @@ h1 {
 }
 
 .movie-details-poster {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .movie-details-poster img {
@@ -302,22 +305,22 @@ h1 {
 }
 
 .add-to-list-button:hover {
-  background-color: #f40612; 
+  background-color: #f40612;
 }
 
 .add-to-list-button:active {
-  background-color: #d40813; 
+  background-color: #d40813;
 }
 
 .add-to-list-button .icon {
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 @media (max-width: 768px) {
   .movie-card {
     width: 150px;
   }
-  
+
   .movie-card img {
     height: 225px;
   }
@@ -348,7 +351,7 @@ h1 {
     width: 90%;
     height: 50%;
   }
-  
+
   .scroll-button {
     display: none;
   }

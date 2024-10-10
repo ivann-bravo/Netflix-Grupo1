@@ -30,14 +30,10 @@ function MovieList() {
 
   const apeliculaVerLuego = (movie) => {
     if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
-  const apeliculaVerLuego = (movie) => {
-    if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
       setPeliculasVistas([...peliculasVistas, movie]);
     }
   }
 
-  const agregarAMiLista = (movie) => {
-    if (!miLista.some(pelicula => pelicula.id === movie.id)) {
   const agregarAMiLista = (movie) => {
     if (!miLista.some(pelicula => pelicula.id === movie.id)) {
       setMiLista([...miLista, movie]);
@@ -55,7 +51,6 @@ function MovieList() {
 
   const buscarPelicula = ({ tituloBuscado }) => {
     return movies.filter(movie =>
-      movie.titulo.toLowerCase().includes(tituloBuscado.toLowerCase()));
       movie.titulo.toLowerCase().includes(tituloBuscado.toLowerCase()));
   }
 

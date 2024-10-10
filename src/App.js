@@ -8,7 +8,7 @@ function App() {
       background: 'linear-gradient(to bottom, #000 0%, #141414 100%)',
       minHeight: '100vh'
     }}>
-      
+
       <main>
         <MovieList />
       </main>
