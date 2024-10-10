@@ -75,7 +75,7 @@ function MovieList() {
     { name: "Populares en Netflix", movies: movies.slice(8, 20) },
     { name: "Volver a ver", movies: movies.slice(16, 20) },
     { name: "Slide Aleatorio", movies: randomMovies },
-    { name: "Mi lista", movies: peliculasVistas }
+    { name: "Historial", movies: peliculasVistas }
   ];
 
   return (

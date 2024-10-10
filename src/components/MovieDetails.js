@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-function MovieDetails({ movie, onClose , onAddToWatched }) {
+function MovieDetails({ movie, onClose, onAddToWatched }) {
   const [showTrailer, setShowTrailer] = useState(false);
 
   if (!movie) return null;
 
   const toggleTrailer = () => {
     setShowTrailer(!showTrailer);
-    
+
     // Aquí llamamos a la función para agregar la película a vistas cuando el trailer se muestra
     if (!showTrailer) {
       onAddToWatched(movie); // Llama a la función que agrega la película a vistas
@@ -21,11 +21,11 @@ function MovieDetails({ movie, onClose , onAddToWatched }) {
 
   return (
     <div className="movie-details-overlay">
-      <div 
+      <div
         className="movie-details-background"
         style={{ backgroundImage: `url(${movie.portada})` }}
       />
-      
+
       <div className="movie-details-content">
         {!showTrailer && <button className="close-button" onClick={onClose}>×</button>}
 
@@ -33,6 +33,10 @@ function MovieDetails({ movie, onClose , onAddToWatched }) {
           <>
             <div className="movie-details-poster">
               <img src={movie.portada} alt={movie.titulo} />
+
+              <button className="add-to-list-button">
+                <span className="icon">+</span> Agregar a mi lista
+              </button>
             </div>
 
             <div className="movie-details-info">
@@ -67,7 +71,7 @@ function MovieDetails({ movie, onClose , onAddToWatched }) {
               ></iframe>
             </div>
             <button className="close-trailer-button" onClick={toggleTrailer}>
-            Volver atrás
+              Volver atrás
             </button>
           </div>
         )}

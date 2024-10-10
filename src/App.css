@@ -171,6 +171,12 @@ h1 {
   cursor: pointer;
 }
 
+.movie-details-poster {
+    position: relative;
+    display: inline-block; /* Para que el contenedor ajuste al tamaño de la imagen */
+}
+
+
 .movie-details-poster img {
   width: 250px;
   height: 375px;
@@ -319,4 +325,36 @@ h1 {
   .scroll-button {
     display: none;
   }
+  
+  
+
+
+}
+
+.add-to-list-button {
+  position: absolute;
+  right: 10px; /* Alinea a la derecha de la imagen */
+  bottom: 10px; /* Alinea hacia abajo de la imagen */
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-list-button:hover {
+  background-color: #f40612; /* Color más claro al pasar el cursor */
+}
+
+.add-to-list-button:active {
+  background-color: #d40813; /* Color más oscuro al hacer clic */
+}
+
+.add-to-list-button .icon {
+  font-size: 20px; /* Tamaño del icono */
 }
