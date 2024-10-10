@@ -8,6 +8,7 @@ function MovieList() {
   const [moviesConFiltro, setMoviesConFiltro] = useState([]) // P. filtradas por titulo
   const [tituloBuscado, setTituloBuscado] = useState('') // Pelicula a buscar
   const [peliculasVistas, setPeliculasVistas] = useState([]) // peliculas vistas por genero
+  const [miLista, setMiLista] = useState([]) // peliculas vistas por genero
 
   const [selectedMovie, setSelectedMovie] = useState(null); // Película seleccionada
   const [randomMovies, setRandomMovies] = useState([]); // Películas aleatorias
@@ -33,6 +34,18 @@ function MovieList() {
     }
   }
 
+  const agregarAMiLista = (movie) =>{
+    if(!miLista.some(pelicula=> pelicula.id === movie.id)){
+      setMiLista([...miLista, movie]);
+    }
+  }
+  const eliminarDeMiLista = (movie) =>{
+    if(miLista.some(pelicula=> pelicula.id === movie.id)){
+       
+      setMiLista(miLista.filter(item => item.id !== movie.id));
+    }
+  }
+  
   const handleCloseDetails = () => {
     setSelectedMovie(null);
   };
@@ -75,7 +88,8 @@ function MovieList() {
     { name: "Populares en Netflix", movies: movies.slice(8, 20) },
     { name: "Volver a ver", movies: movies.slice(16, 20) },
     { name: "Slide Aleatorio", movies: randomMovies },
-    { name: "Historial", movies: peliculasVistas }
+    { name: "Historial", movies: peliculasVistas },
+    { name: "Mi Lista", movies: miLista }
   ];
 
   return (
@@ -130,7 +144,7 @@ function MovieList() {
         )
       }
 
-      <MovieDetails movie={selectedMovie} onClose={handleCloseDetails} onAddToWatched={apeliculaVerLuego} />
+      <MovieDetails movie={selectedMovie} onClose={handleCloseDetails} onAddToWatched={apeliculaVerLuego} addToList= {agregarAMiLista} eliminar={eliminarDeMiLista}/>
     </div>
   );
 }

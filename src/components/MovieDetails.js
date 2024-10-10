@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-function MovieDetails({ movie, onClose, onAddToWatched }) {
+function MovieDetails({ movie, onClose, onAddToWatched , addToList, eliminar}) {
   const [showTrailer, setShowTrailer] = useState(false);
-
+  const [showMyList, setShowMyList] = useState(false);
+  
   if (!movie) return null;
 
   const toggleTrailer = () => {
@@ -13,6 +14,22 @@ function MovieDetails({ movie, onClose, onAddToWatched }) {
       onAddToWatched(movie); // Llama a la función que agrega la película a vistas
     }
   };
+
+  const toggleMylist= ()=> {
+    setShowMyList(!showMyList);
+
+    
+
+    if(showMyList){
+      addToList(movie)
+        
+    }
+    if(!showMyList){
+      eliminar(movie)
+    }
+
+  }
+
 
   const getYouTubeEmbedUrl = (url) => {
     const videoId = url.split('v=')[1];
@@ -34,8 +51,8 @@ function MovieDetails({ movie, onClose, onAddToWatched }) {
             <div className="movie-details-poster">
               <img src={movie.portada} alt={movie.titulo} />
 
-              <button className="add-to-list-button">
-                <span className="icon">+</span> Agregar a mi lista
+              <button className="add-to-list-button" onClick={toggleMylist}>
+                <span className="icon">+</span> {showMyList ?'Agregar a mi lista' : 'Sacar de mi lista' }
               </button>
             </div>
 
