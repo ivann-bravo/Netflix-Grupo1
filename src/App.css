@@ -10,22 +10,38 @@ body {
 }
 
 .App-header {
-  background-color: #000;
-  padding: 1rem;
+  padding: 2rem 2rem 4rem 2rem;
   position: relative;
   z-index: 1000;
   text-align: center;
-
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  color: white;
 }
 
-.App-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-center {
+  justify-content: center;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.netflix-logo {
+  height: 40px;
+  cursor: pointer;
 }
 
 .form {
@@ -57,6 +73,41 @@ body {
   background-color: #f40612;
 }
 
+.user-greeting {
+  color: white;
+  margin-right: 1rem;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #f40612;
+}
+
+.search-results {
+  height: 100vh;
+}
+
+.search-results h2 {
+  margin-left: 4rem;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem 4rem;
+}
+
 h1 {
   color: #e50914;
   font-size: 2rem;
@@ -80,9 +131,8 @@ h1 {
 }
 
 .categorie-slider h2 {
-  margin: 4rem 0 0 4rem;
+  margin-left: 4rem;
   color: rgb(229, 229, 229);
-  font-size: 1.7rem;
 }
 
 .categorie-scroll {
@@ -316,7 +366,50 @@ h1 {
   font-size: 20px;
 }
 
+.app-footer {
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.github-profiles {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.github-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.github-avatar:hover {
+  transform: scale(1.1);
+}
+
+.repo-link {
+  color: #e50914;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.repo-link:hover {
+  color: #f40612;
+}
+
 @media (max-width: 768px) {
+
+  .search-results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
   .movie-card {
     width: 150px;
   }
