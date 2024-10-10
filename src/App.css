@@ -18,44 +18,43 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  color: white; /* Texto blanco */
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
 }
 
 .App-header h1 {
-  font-size: 2.5rem; /* Tamaño del título */
-  margin-bottom: 20px; /* Espacio debajo del título */
-  font-family: 'Netflix Sans', sans-serif; /* Fuente de estilo Netflix (ajusta según tu preferencia) */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .form {
-  display: flex; /* Usar flex para alinear el input y el botón */
-  justify-content: center; /* Centra el contenido del formulario */
+  display: flex; 
+  justify-content: center; 
 }
 
 .form input {
-  padding: 10px; /* Espacio interno */
-  border: none; /* Sin borde */
-  border-radius: 5px 0 0 5px; /* Bordes redondeados a la izquierda */
-  outline: none; /* Sin contorno al seleccionar */
-  font-size: 1rem; /* Tamaño de fuente */
-  width: 300px; /* Ajusta el valor según tus necesidades */
+  padding: 10px; 
+  border: none; 
+  border-radius: 5px 0 0 5px;
+  outline: none; 
+  font-size: 1rem; 
+  width: 300px; 
 }
 
 .form button {
-  padding: 10px 20px; /* Espacio interno del botón */
-  border: none; /* Sin borde */
-  border-radius: 0 5px 5px 0; /* Bordes redondeados a la derecha */
-  background-color: #e50914; /* Color rojo de Netflix */
-  color: white; /* Texto blanco */
-  font-size: 1rem; /* Tamaño de fuente */
-  cursor: pointer; /* Cambia el cursor al pasar el ratón */
-  transition: background-color 0.3s; /* Transición suave para el hover */
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 0 5px 5px 0; 
+  background-color: #e50914; 
+  color: white; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .form button:hover {
-  background-color: #f40612; /* Color más oscuro en hover */
+  background-color: #f40612; 
 }
 
 h1 {
@@ -173,9 +172,8 @@ h1 {
 
 .movie-details-poster {
     position: relative;
-    display: inline-block; /* Para que el contenedor ajuste al tamaño de la imagen */
+    display: inline-block;
 }
-
 
 .movie-details-poster img {
   width: 250px;
@@ -286,6 +284,35 @@ h1 {
   cursor: not-allowed;
 }
 
+.add-to-list-button {
+  position: absolute;
+  right: 0.8em;
+  left: 0.8em;
+  bottom: 1em;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-list-button:hover {
+  background-color: #f40612; 
+}
+
+.add-to-list-button:active {
+  background-color: #d40813; 
+}
+
+.add-to-list-button .icon {
+  font-size: 20px; 
+}
+
 @media (max-width: 768px) {
   .movie-card {
     width: 150px;
@@ -325,36 +352,5 @@ h1 {
   .scroll-button {
     display: none;
   }
-  
-  
 
-
-}
-
-.add-to-list-button {
-  position: absolute;
-  right: 10px; /* Alinea a la derecha de la imagen */
-  bottom: 10px; /* Alinea hacia abajo de la imagen */
-  background-color: #e50914;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-list-button:hover {
-  background-color: #f40612; /* Color más claro al pasar el cursor */
-}
-
-.add-to-list-button:active {
-  background-color: #d40813; /* Color más oscuro al hacer clic */
-}
-
-.add-to-list-button .icon {
-  font-size: 20px; /* Tamaño del icono */
 }

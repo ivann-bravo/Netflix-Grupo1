@@ -1,35 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function MovieDetails({ movie, onClose, onAddToWatched , addToList, eliminar}) {
+function MovieDetails({ movie, onClose, onAddToWatched, addToList, eliminar, isInMyList }) {
   const [showTrailer, setShowTrailer] = useState(false);
-  const [showMyList, setShowMyList] = useState(false);
-  
+  const [inList, setInList] = useState(isInMyList);
+
+  useEffect(() => {
+    setInList(isInMyList);
+  }, [isInMyList]);
+
   if (!movie) return null;
 
   const toggleTrailer = () => {
     setShowTrailer(!showTrailer);
-
-    // Aquí llamamos a la función para agregar la película a vistas cuando el trailer se muestra
     if (!showTrailer) {
-      onAddToWatched(movie); // Llama a la función que agrega la película a vistas
+      onAddToWatched(movie);
     }
   };
 
-  const toggleMylist= ()=> {
-    setShowMyList(!showMyList);
-
-    
-
-    if(showMyList){
-      addToList(movie)
-        
+  const toggleMyList = () => {
+    if (inList) {
+      eliminar(movie);
+    } else {
+      addToList(movie);
     }
-    if(!showMyList){
-      eliminar(movie)
-    }
-
-  }
-
+    setInList(!inList);
+  };
 
   const getYouTubeEmbedUrl = (url) => {
     const videoId = url.split('v=')[1];
@@ -51,16 +46,17 @@ function MovieDetails({ movie, onClose, onAddToWatched , addToList, eliminar}) {
             <div className="movie-details-poster">
               <img src={movie.portada} alt={movie.titulo} />
 
-              <button className="add-to-list-button" onClick={toggleMylist}>
-                <span className="icon">+</span> {showMyList ?'Agregar a mi lista' : 'Sacar de mi lista' }
+              <button className="add-to-list-button" onClick={toggleMyList}>
+                <span className="icon">{inList ? '-' : '+'}</span> {inList ? 'Eliminar de mi lista' : 'Agregar a mi lista'}
               </button>
             </div>
 
             <div className="movie-details-info">
               <h2>{movie.titulo}</h2>
-              <p>{movie.año} | {movie.genero} | {movie.duracion} | {movie.edadMinima}+</p>
+              <p>{movie.año} | {movie.duracion} | {movie.edadMinima}+</p>
               <p>{movie.descripcionLarga}</p>
               <br />
+              <p><strong>Géneros:</strong> {movie.genero.join(', ')}</p>
               <p><strong>Director:</strong> {movie.director}</p>
               <p><strong>Reparto:</strong> {movie.reparto.join(', ')}</p>
               <p><strong>Idiomas:</strong> {movie.idiomas.join(', ')}</p>
