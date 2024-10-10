@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import MovieCard from './MovieCard';
 import MovieDetails from './MovieDetails';
 import moviesData from '../data/movies.json';
-import MovieSlides from './MovieSlides';
 
 function MovieList() {
   const [movies, setMovies] = useState([]); // Todas las películas
@@ -40,12 +39,11 @@ function MovieList() {
       setMiLista([...miLista, movie]);
     }
   }
-  const eliminarDeMiLista = (movie) => {
-    if (miLista.some(pelicula => pelicula.id === movie.id)) {
 
-      setMiLista(miLista.filter(item => item.id !== movie.id));
-    }
+  const eliminarDeMiLista = (movie) => {
+    setMiLista(miLista.filter(item => item.id !== movie.id));
   }
+
 
   const handleCloseDetails = () => {
     setSelectedMovie(null);
@@ -58,6 +56,8 @@ function MovieList() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (tituloBuscado !== '')
+      setMoviesConFiltro(buscarPelicula({ tituloBuscado }))
     if (tituloBuscado !== '')
       setMoviesConFiltro(buscarPelicula({ tituloBuscado }))
   }
@@ -124,11 +124,39 @@ function MovieList() {
               </div>
             </div>
           ))
-        ) : <MovieSlides categories={categories} handleMovieClick={handleMovieClick} />
-        
+        ) : (
+          categories.map((category, index) => {
+            return (
+              category.movies.length ? (
+                <div key={index}>
+                  <h2 style={{ marginLeft: '4rem', color: '#e5e5e5' }}>{category.name}</h2>
+
+                  <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
+                    <button onClick={() => scrollLeft(index + 1)} className="scroll-button">◀</button>
+
+                    <section className="movie-list" ref={el => scrollRefs.current[index + 1] = el}>
+                      {category.movies.map((movie) => (
+                        <MovieCard key={movie.id} movie={movie} onClick={handleMovieClick} />
+                      ))}
+                    </section>
+
+                    <button onClick={() => scrollRight(index + 1)} className="scroll-button">▶</button>
+                  </div>
+                </div>
+              ) : null
+            );
+          })
+        )
       }
 
-      <MovieDetails movie={selectedMovie} onClose={handleCloseDetails} onAddToWatched={apeliculaVerLuego} addToList={agregarAMiLista} eliminar={eliminarDeMiLista} />
+      <MovieDetails
+        movie={selectedMovie}
+        onClose={handleCloseDetails}
+        onAddToWatched={apeliculaVerLuego}
+        addToList={agregarAMiLista}
+        eliminar={eliminarDeMiLista}
+        isInMyList={selectedMovie ? miLista.some(m => m.id === selectedMovie.id) : false}
+      />
     </div>
   );
 }
