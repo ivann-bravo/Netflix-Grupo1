@@ -1,18 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import {saveInLocalStorage, getUsersFromStorage, addMovieToMiList, addMovieToRecord, removeMovieToList} from '../movieUpdater.js'
 import MovieCard from './MovieCard';
 import MovieDetails from './MovieDetails';
 import Footer from './Footer';
+import MovieSlides from './MovieSlides';
 import moviesData from '../data/movies.json';
+
+saveInLocalStorage()
 
 function MovieList() {
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [favouriteGenre, setFavouriteGenre] = useState([])
   const [peliculasVistas, setPeliculasVistas] = useState([]);
   const [miLista, setMiLista] = useState([]);
+  const [user, setUser] = useState([])
+  const idUsuario = 3
+
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [randomMovies, setRandomMovies] = useState([]);
-  const scrollRefs = useRef([]);
   const [isSearching, setIsSearching] = useState(false);
 
   const getRandomMovies = (movies, count) => {
@@ -21,27 +28,46 @@ function MovieList() {
   };
 
   useEffect(() => {
+    
+    const users = getUsersFromStorage()
+    const userIndex = users.findIndex((user) => user.id === idUsuario)
+    setUser(users[userIndex])
+
+    // Lista de movies que incluyen el genero fav del usuario
+    const filtrarGenerosFavoritos = ()  => {
+      const generosFavoritos = movies.filter(movie =>
+         movie.genero.some(genre => user.genre.includes(genre)) )
+      setFavouriteGenre(generosFavoritos)
+    }
+
     setMovies(moviesData);
-    setRandomMovies(getRandomMovies(moviesData, 20));
-  }, []);
+    setPeliculasVistas(user.record)
+    setMiLista(user.miList)
+    setRandomMovies(getRandomMovies(moviesData, 20)); // Generar 20 películas aleatorias una vez
+    filtrarGenerosFavoritos()
+  }, [movies, idUsuario]); // Este efecto se ejecuta solo una vez cuando la página se carga
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
   };
 
-  const apeliculaVerLuego = (movie) => {
+  const agregarAHistorial = (movie) => {
     if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
+      addMovieToRecord(idUsuario, movie)
+      console.log('movies agregadas ' + getUsersFromStorage()[0].record)
       setPeliculasVistas([...peliculasVistas, movie]);
     }
   };
 
   const agregarAMiLista = (movie) => {
     if (!miLista.some(pelicula => pelicula.id === movie.id)) {
+      addMovieToMiList(idUsuario, movie)
       setMiLista([...miLista, movie]);
     }
   };
 
   const eliminarDeMiLista = (movie) => {
+    removeMovieToList(idUsuario, movie)
     setMiLista(miLista.filter(item => item.id !== movie.id));
   };
 
@@ -80,25 +106,14 @@ function MovieList() {
     }
   };
 
-  const scrollLeft = (index) => {
-    if (scrollRefs.current[index]) {
-      scrollRefs.current[index].scrollBy({ left: -900, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = (index) => {
-    if (scrollRefs.current[index]) {
-      scrollRefs.current[index].scrollBy({ left: 900, behavior: 'smooth' });
-    }
-  };
 
   const categories = [
+    { name: "Basado en tus Generos Favoritos", movies: favouriteGenre },
     { name: "Tendencias", movies: movies.slice(0, 12) },
     { name: "Populares en Netflix", movies: movies.slice(8, 20) },
-    { name: "Volver a ver", movies: movies.slice(16, 20) },
     { name: "Slide Aleatorio", movies: randomMovies },
-    { name: "Historial", movies: peliculasVistas },
-    { name: "Mi Lista", movies: miLista }
+    { name: "Historial", movies: peliculasVistas? peliculasVistas : [] },
+    { name: "Mi Lista", movies: miLista? miLista:[] }
   ];
 
   return (
@@ -123,7 +138,7 @@ function MovieList() {
           </form>
         </div>
         <div className="header-right">
-          <span className="user-greeting">Hola, Usuario</span>
+          <span className="user-greeting">Hola, {user.name}</span>
           <button className="logout-button">Logout</button>
         </div>
       </header>
@@ -138,30 +153,14 @@ function MovieList() {
           </div>
         </div>
       ) : (
-        categories.map((category, index) => {
-          return (
-            category.movies.length ? (
-              <div className="categorie-slider" key={index}>
-                <h2>{category.name}</h2>
-                <div className="categorie-scroll">
-                  <button onClick={() => scrollLeft(index)} className="scroll-button">◀</button>
-                  <section className="movie-list" ref={el => scrollRefs.current[index] = el}>
-                    {category.movies.map((movie) => (
-                      <MovieCard key={movie.id} movie={movie} onClick={handleMovieClick} />
-                    ))}
-                  </section>
-                  <button onClick={() => scrollRight(index)} className="scroll-button">▶</button>
-                </div>
-              </div>
-            ) : null
-          );
-        })
-      )}
+        <MovieSlides categories={categories} handleMovieClick={handleMovieClick}/>
+      )
+      }
 
       <MovieDetails
         movie={selectedMovie}
         onClose={handleCloseDetails}
-        onAddToWatched={apeliculaVerLuego}
+        onAddToWatched={agregarAHistorial}
         addToList={agregarAMiLista}
         eliminar={eliminarDeMiLista}
         isInMyList={selectedMovie ? miLista.some(m => m.id === selectedMovie.id) : false}
@@ -171,5 +170,6 @@ function MovieList() {
     </div>
   );
 }
+
 
 export default MovieList;

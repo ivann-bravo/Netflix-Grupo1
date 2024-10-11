@@ -1,0 +1,92 @@
+    [
+    {
+      "id": 1,
+      "user": "user",
+      "pass": "user",
+      "name": "User",
+      "genre": ["Fantasía", "Comedia"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 2,
+      "user": "admin",
+      "pass": "admin",
+      "name": "Admin",
+      "genre": ["Thriller", "Drama"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 3,
+      "user": "user3",
+      "pass": "pass3",
+      "name": "Enzo",
+      "genre": ["Ciencia Ficción", "Aventura"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 4,
+      "user": "user4",
+      "pass": "pass4",
+      "name": "Lucila",
+      "genre": ["Romance", "Animación"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 5,
+      "user": "user5",
+      "pass": "pass5",
+      "name": "Dylan",
+      "genre": ["Musical", "Acción"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 6,
+      "user": "user6",
+      "pass": "pass6",
+      "name": "Ivan",
+      "genre": ["Fantasía", "Crimen"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 7,
+      "user": "user7",
+      "pass": "pass7",
+      "name": "Fer",
+      "genre": ["Crimen", "Romance"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 8,
+      "user": "user8",
+      "pass": "pass8",
+      "name": "user",
+      "genre": ["Ciencia Ficción", "Musical"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 9,
+      "user": "user9",
+      "pass": "pass9",
+      "name": "user",
+      "genre": ["Acción", "Thriller"],
+      "record": [],
+      "miList": []
+    },
+    {
+      "id": 10,
+      "user": "user10",
+      "pass": "pass10",
+      "name": "user",
+      "genre": ["Comedia", "Animación"],
+      "record": [],
+      "miList": []
+    }
+  ]
