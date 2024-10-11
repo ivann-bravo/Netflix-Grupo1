@@ -54,7 +54,6 @@ function MovieList() {
   const agregarAHistorial = (movie) => {
     if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
       addMovieToRecord(idUsuario, movie)
-      console.log('movies agregadas ' + getUsersFromStorage()[0].record)
       setPeliculasVistas([...peliculasVistas, movie]);
     }
   };
