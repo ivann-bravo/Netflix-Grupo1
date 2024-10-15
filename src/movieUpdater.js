@@ -28,7 +28,7 @@ const addMovieToRecord = (userId, movie) => {
     
     // Guardar los datos actualizados
     saveUsersToStorage(users);
-    console.log('guarde los datos')
+    console.log('Se agrego una pelicula al historial')
   }
 }
 
@@ -42,7 +42,7 @@ const addMovieToMiList = (userId, movie) => {
     
     // Guardar los datos actualizados
     saveUsersToStorage(users);
-    console.log('guarde los datos en la lista')
+    console.log('Se agrego una pelicula a la lista')
   }
 }
 
@@ -56,6 +56,7 @@ const removeMovieToList = (userId, movie) => {
     
     // Guardar los datos actualizados
     saveUsersToStorage(users);
+    console.log('Se elimino una pelicula de la lista')
   }
 }
 

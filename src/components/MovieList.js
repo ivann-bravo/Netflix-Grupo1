@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {saveInLocalStorage, getUsersFromStorage, addMovieToMiList, addMovieToRecord, removeMovieToList} from '../movieUpdater.js'
+import {saveInLocalStorage, addMovieToMiList, addMovieToRecord, removeMovieToList} from '../movieUpdater.js'
 import MovieCard from './MovieCard';
 import MovieDetails from './MovieDetails';
 import Footer from './Footer';
@@ -8,16 +8,14 @@ import moviesData from '../data/movies.json';
 
 saveInLocalStorage()
 
-function MovieList() {
+function MovieList({user, setUser}) {
+
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [favouriteGenre, setFavouriteGenre] = useState([])
   const [peliculasVistas, setPeliculasVistas] = useState([]);
   const [miLista, setMiLista] = useState([]);
-  const [user, setUser] = useState([])
-  const idUsuario = 3
-
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [randomMovies, setRandomMovies] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -29,9 +27,9 @@ function MovieList() {
 
   useEffect(() => {
     
-    const users = getUsersFromStorage()
-    const userIndex = users.findIndex((user) => user.id === idUsuario)
-    setUser(users[userIndex])
+    //const users = getUsersFromStorage()
+    //const userIndex = users.findIndex((user) => user.id === idUsuario)
+    //setUser(users[userIndex])
 
     // Lista de movies que incluyen el genero fav del usuario
     const filtrarGenerosFavoritos = ()  => {
@@ -45,7 +43,7 @@ function MovieList() {
     setMiLista(user.miList)
     setRandomMovies(getRandomMovies(moviesData, 20)); // Generar 20 películas aleatorias una vez
     filtrarGenerosFavoritos()
-  }, [movies, idUsuario]); // Este efecto se ejecuta solo una vez cuando la página se carga
+  }, [movies]); // Este efecto se ejecuta solo una vez cuando la página se carga
 
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
@@ -53,20 +51,20 @@ function MovieList() {
 
   const agregarAHistorial = (movie) => {
     if (!peliculasVistas.some(pelicula => pelicula.id === movie.id)) {
-      addMovieToRecord(idUsuario, movie)
+      addMovieToRecord(user.id, movie)
       setPeliculasVistas([...peliculasVistas, movie]);
     }
   };
 
   const agregarAMiLista = (movie) => {
     if (!miLista.some(pelicula => pelicula.id === movie.id)) {
-      addMovieToMiList(idUsuario, movie)
+      addMovieToMiList(user.id, movie)
       setMiLista([...miLista, movie]);
     }
   };
 
   const eliminarDeMiLista = (movie) => {
-    removeMovieToList(idUsuario, movie)
+    removeMovieToList(user.id, movie)
     setMiLista(miLista.filter(item => item.id !== movie.id));
   };
 
@@ -105,6 +103,10 @@ function MovieList() {
     }
   };
 
+  const handleLogout = () => {
+    setUser(null)
+  }
+
 
   const categories = [
     { name: "Basado en tus Generos Favoritos", movies: favouriteGenre },
@@ -138,7 +140,7 @@ function MovieList() {
         </div>
         <div className="header-right">
           <span className="user-greeting">Hola, {user.name}</span>
-          <button className="logout-button">Logout</button>
+          <button className="logout-button" onClick={handleLogout}>Logout</button>
         </div>
       </header>
 
