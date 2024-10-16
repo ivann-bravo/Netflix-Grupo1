@@ -7,7 +7,7 @@ import {useState} from "react";
 
 
 function App() {
-  const [user,setUser]= useState([]);
+  const [user,setUser]= useState(null);
 
   return (
     <div className="App" style={{
@@ -16,9 +16,9 @@ function App() {
     }}>
 
       <main>
-      {!user.length >0
+      {!user
         ?<Formulario setUser={setUser}/>
-        : <MovieList /> 
+        : <MovieList user={user} setUser={setUser} /> 
 
       }
       </main>

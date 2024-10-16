@@ -1,3 +1,4 @@
+import validarUser from "../validarUser";
 import  "./Formulario.css";
 import {useState} from "react";
 
@@ -13,8 +14,18 @@ function Formulario({setUser}){
             setError(true)
             return
         }
+
+        const existeUsuario = validarUser(nombre,contraseña) ;
+
+        if  (existeUsuario){
+            setUser(existeUsuario);
+        }else{
+            setError(true)
+            return
+        }
+
         setError(false);
-        setUser([nombre]);
+        
     }
   
 
@@ -32,7 +43,7 @@ function Formulario({setUser}){
                 />
                 <button>Iniciar sesion</button>
             </form>
-            {error && <p>Todos los campos son obligatorios</p>}
+            {error && <p style={{color :"red" }}>No se encontro el usuario</p>}
         </section>
     )
 
