@@ -9,6 +9,120 @@ body {
   color: white;
 }
 
+.login-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f272782d-cf96-4988-a675-6db2afd165e0/web/AR-es-20241008-TRIFECTA-perspective_d5d5b391-a686-41af-9d1c-5155d5774695_large.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px) brightness(0.4);
+  transform: scale(1.1); 
+}
+
+.login-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.5;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  padding: 5% 5% 0 5%;
+  width: 90%;
+  height: 3rem;
+  color: white;
+  font-size: 20px;
+  background: rgba(51, 51, 51, 0.2);
+  border: solid 1px #666;
+  border-radius: 4px;
+  transition: all .3s ease;
+}
+
+.input-group input:focus {
+  border-color: white;
+}
+
+.input-group label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 18px;
+  transition: all .3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label{
+  top: 25%;
+  font-size: 12px;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5rem;
+  width: 35%;
+}
+
+.login-form h1 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.login-form input::placeholder {
+  color: #8c8c8c;
+}
+
+.login-button {
+  width: 100%;
+  padding: auto;
+  height: 3rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #f40612;
+}
+
+.error-message {
+  color: #f40612;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
 .App-header {
   padding: 2rem 2rem 4rem 2rem;
   position: relative;
@@ -94,8 +208,9 @@ body {
 }
 
 .search-results {
-  height: 100vh;
+  min-height: 100vh;
 }
+
 
 .search-results h2 {
   margin-left: 4rem;
@@ -131,7 +246,7 @@ h1 {
 }
 
 .categorie-slider h2 {
-  margin-left: 4rem;
+  margin-left: 3rem;
   color: rgb(229, 229, 229);
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieList from './components/MovieList';
 import './App.css';
-import Formulario from './components/Formulario.js';
+import Login from './components/Login.js';
 
 import {useState} from "react";
 
@@ -17,7 +17,7 @@ function App() {
 
       <main>
       {!user
-        ?<Formulario setUser={setUser}/>
+        ?<Login setUser={setUser}/>
         : <MovieList user={user} setUser={setUser} /> 
 
       }

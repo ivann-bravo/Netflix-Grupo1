@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {saveInLocalStorage, addMovieToMiList, addMovieToRecord, removeMovieToList} from '../movieUpdater.js'
+import { saveInLocalStorage, addMovieToMiList, addMovieToRecord, removeMovieToList } from '../movieUpdater.js'
 import MovieCard from './MovieCard';
 import MovieDetails from './MovieDetails';
 import Footer from './Footer';
@@ -8,7 +8,7 @@ import moviesData from '../data/movies.json';
 
 saveInLocalStorage()
 
-function MovieList({user, setUser}) {
+function MovieList({ user, setUser }) {
 
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -26,15 +26,15 @@ function MovieList({user, setUser}) {
   };
 
   useEffect(() => {
-    
+
     //const users = getUsersFromStorage()
     //const userIndex = users.findIndex((user) => user.id === idUsuario)
     //setUser(users[userIndex])
 
     // Lista de movies que incluyen el genero fav del usuario
-    const filtrarGenerosFavoritos = ()  => {
+    const filtrarGenerosFavoritos = () => {
       const generosFavoritos = movies.filter(movie =>
-         movie.genero.some(genre => user.genre.includes(genre)) )
+        movie.genero.some(genre => user.genre.includes(genre)))
       setFavouriteGenre(generosFavoritos)
     }
 
@@ -109,12 +109,13 @@ function MovieList({user, setUser}) {
 
 
   const categories = [
-    { name: "Basado en tus Generos Favoritos", movies: favouriteGenre },
-    { name: "Tendencias", movies: movies.slice(0, 12) },
-    { name: "Populares en Netflix", movies: movies.slice(8, 20) },
-    { name: "Slide Aleatorio", movies: randomMovies },
-    { name: "Historial", movies: peliculasVistas? peliculasVistas : [] },
-    { name: "Mi Lista", movies: miLista? miLista:[] }
+    { name: "Basado en tus géneros favoritos", movies: favouriteGenre },
+    { name: "Tendencias", movies: movies.slice(0, 20) },
+    { name: "Lo nuevo en Netflix", movies: movies.slice(20, 40) },
+    { name: "Nuestra selección de hoy para ti", movies: randomMovies },
+    { name: "Mi Lista", movies: miLista ? miLista : [] },
+    { name: "Historial", movies: peliculasVistas ? peliculasVistas : [] }
+
   ];
 
   return (
@@ -154,7 +155,7 @@ function MovieList({user, setUser}) {
           </div>
         </div>
       ) : (
-        <MovieSlides categories={categories} handleMovieClick={handleMovieClick}/>
+        <MovieSlides categories={categories} handleMovieClick={handleMovieClick} />
       )
       }
 

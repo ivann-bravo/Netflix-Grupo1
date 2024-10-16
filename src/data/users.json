@@ -4,7 +4,7 @@
       "user": "user",
       "pass": "user",
       "name": "User",
-      "genre": ["Fantasía", "Comedia"],
+      "genre": ["Terror", "Acción"],
       "record": [],
       "miList": []
     },
@@ -13,7 +13,7 @@
       "user": "admin",
       "pass": "admin",
       "name": "Admin",
-      "genre": ["Thriller", "Drama"],
+      "genre": ["Comedia", "Fantasía"],
       "record": [],
       "miList": []
     },
@@ -49,7 +49,7 @@
       "user": "user6",
       "pass": "pass6",
       "name": "Ivan",
-      "genre": ["Fantasía", "Crimen"],
+      "genre": ["Terror", "Crimen"],
       "record": [],
       "miList": []
     },
