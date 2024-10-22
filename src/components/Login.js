@@ -16,7 +16,7 @@ function Login({ setUser }) {
 
         const existeUsuario = validarUser(nombre, contraseña);
 
-        if (existeUsuario) {
+        if (existeUsuario !== -1) {
             setUser(existeUsuario);
         } else {
             setError(true);
